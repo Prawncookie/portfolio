@@ -1,0 +1,12 @@
+# Local verification output and dependencies
+qa/
+node_modules/
+*.log
+
+# Credentials and machine-local configuration
+.env
+.env.*
+!.env.example
+.vercel/
+.DS_Store
+Thumbs.db

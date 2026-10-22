@@ -1,0 +1,10 @@
+{
+  "checkedOn": "2026-10-22",
+  "sources": [
+    {"name":"luxgear","url":"https://www.luxgear.ae","captureDate":"2026-10-22","method":"Read-only public browser screenshot"},
+    {"name":"neopraxis","url":"https://www.neopraxis.net","captureDate":"2026-10-22","method":"Read-only public browser screenshot"},
+    {"name":"heaven-hearts","url":"https://www.heavenhearts.com","captureDate":"2026-10-22","method":"Read-only public browser screenshot"},
+    {"name":"alee","url":"https://photographybyalee.com","captureDate":"2026-09-07","method":"Owner-retained capture in Neo/public/images/work/photography-by-alee.webp; new browser attempt403, not bypassed. Live content checked via TinyFish22October."},
+    {"name":"aapl","url":"https://aapl-stock-predictor.vercel.app","captureDate":"2026-10-22","method":"Read-only public browser screenshot200, no prediction request or provider call."}
+  ]
+}
