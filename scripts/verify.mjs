@@ -155,6 +155,7 @@ try {
   for(const width of [1440,768,390]) {
     await page.setViewportSize({width,height:1000});
     await page.evaluate(()=>scrollTo(0,0));
+    await page.waitForFunction(()=>document.documentElement.scrollWidth<=innerWidth,null,{timeout:5000});
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`case overflow ${width}`);
     await page.screenshot({path:new URL(`../qa/luxgear-${width}.png`,import.meta.url).pathname.replace(/^\/([A-Z]:)/,'$1'),fullPage:true});
     if(width===390)await page.locator('.product-flow').screenshot({path:new URL('../qa/luxgear-flow.png',import.meta.url).pathname.replace(/^\/([A-Z]:)/,'$1')});

@@ -18,8 +18,11 @@ Basit directly confirms the CV's August 2026 Lux Gear start date. Both current
 CV variants retain Neo Praxis experience and independent/freelance work. AAPL
 remains educational, not an investment-performance claim.
 
-The last user-supplied portfolio URL was read-only checked on 28 October and
-still returned 404. Local work and passing QA do not establish public deployment.
+The last user-supplied portfolio URL returned 404 before the 28 October release.
+After explicit publication approval, runtime commit 96c53d9 deployed through the
+original repository and that URL serves the released homepage, case study and CV.
+Public response bytes match their released Git blobs. A local QA pass alone was
+not used as deployment evidence.
 
 Reviewed22 October2026. User requests completed and deployed work only. Scope is
 the `C:/Users/Basit/dev` inventory, not a claim every dependency or every business

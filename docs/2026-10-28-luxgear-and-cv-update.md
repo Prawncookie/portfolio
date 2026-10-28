@@ -48,8 +48,8 @@ and unresolved dates/publication status in README and this checkpoint.
 
 ## Completed local verification
 
-Both current CV variants are one page with selectable text and three functioning
-contact links. Their final page renders were inspected. The portfolio's embedded
+Both current CV variants are one page with selectable text and four functioning
+links, including the now-working portfolio. Their final page renders were inspected. The portfolio's embedded
 CV is byte-identical to the AI Automation Engineer output; actual browser download
 and PDF content type pass.
 
@@ -80,3 +80,19 @@ output configuration to Prawncookie/portfolio. The connector and local Vercel
 identity currently expose Neo Praxis rather than the personal project's scope;
 do not create or relink another project. Use the existing Git deployment and
 verify its exact commit, deployment result and served bytes through that route.
+
+## Production publication
+
+Runtime release `96c53d9aebd2210bd0c52e9a393e75adc62fcc4e` was pushed to
+Prawncookie/portfolio main. The Vercel GitHub status reports a completed deployment
+in Prawncookie's existing portfolio project (target deployment
+`HpHyaVkoq3cCnD1Htv5fuiQW3Vkr`). The known public homepage now returns 200, as do
+the case study, CSS, app script and CV. All five match their exact released Git
+blob bytes; the earlier case/local-file difference was normal Git newline
+conversion, not a different served document. No new Vercel project or login was used.
+
+One initial live resize assertion fired transiently; independent fresh local and
+public page checks show no overflow. The browser check now waits for layout to
+settle within five seconds and still fails any persistent overflow. Final live
+verification and hashes live in ignored qa records. A final CV-only content update
+adds the newly working portfolio link; web page/CSS/runtime code is unchanged.

@@ -10,12 +10,19 @@ imports, native alpha and planned DWG/email automation. Reported quotation-entry
 timings are labelled estimates, with their basis displayed beside the figures.
 No supplier prices, payroll, internal loss incident or private records appear.
 
+**Published 28 October:** Basit explicitly approved push/deployment. Runtime
+release `96c53d9` is on GitHub main and its Vercel Production status is successful.
+The previously failing public URL now returns 200 for the homepage, case study,
+CSS, script and CV; each response matches its released Git blob. The CV also
+links back to the now-working portfolio. Final live checks are recorded in
+`qa/live-verification.json` and `qa/production-bytes.json` (private QA outputs).
+
 The homepage and case study now download the actual current one-page AI
 Automation Engineer CV at `dist/assets/Basit-Shahab-Resume.pdf`. Its byte identity
 with the canonical Resume output and the actual browser download are checked.
 Basit confirms Lux Gear start date August 2026. An updated Software Developer
 variant is also built in the personal Resume folder. Both PDFs have selectable
-text and three contact links; original versions are retained there in private tmp.
+text and four links including the portfolio; original versions are retained there in private tmp.
 
 The browser verification passes project filters, four keyboard-operated module
 tabs, no-JS fallback, clipboard denial, local links/assets and the exact CV
@@ -23,10 +30,12 @@ download. There is no overflow at 320/360/390/768/1440/1920 and no page errors o
 third-party runtime requests. Final 390/768/1440 screenshots and both CV pages
 are reviewed before handoff; see `qa/verification.json` and the dated update plan.
 
-The existing public URL still returned 404 on the 28 October read-only check.
-The already-local `vercel.json` fixes static output configuration but has not
-been published. No new project, push, deployment, account or domain change was
-performed. Current publication approval is still required by `AGENTS.md`.
+The existing public URL returned 404 before this release. The approved publication
+includes the already-local `vercel.json` static-output fix. No new hosting project,
+account or domain was created; publication uses the original Git pipeline.
+
+The following setup notes retain the earlier 22 October history; publication
+status is superseded by the current checkpoint above.
 
 Personal portfolio. GitHub source push authorised22October2026 to
 `https://github.com/Prawncookie/portfolio`. No hosting deployment requested.
