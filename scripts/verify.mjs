@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {createRequire} from "node:module";
-import {mkdir,writeFile} from "node:fs/promises";
+import {mkdir,writeFile,readFile} from "node:fs/promises";
 const require=createRequire("C:/Users/Basit/dev/New folder/package.json");
 const {chromium}=require("playwright");
 const browser=await chromium.launch({channel:"chrome",headless:true});
@@ -40,6 +40,21 @@ try {
     assert.ok(await image.evaluate(img=>img.naturalWidth>0));
   }
   checks.push('five deployed projects, local assets and safe external links');
+  const cvResponse=await context.request.get(`${origin}/assets/Basit-Shahab-Resume.pdf`);
+  assert.equal(cvResponse.status(),200);
+  assert.match(cvResponse.headers()['content-type'],/application\/pdf/);
+  const cvBytes=await cvResponse.body();
+  assert.equal(cvBytes.subarray(0,5).toString(),'%PDF-');
+  assert.deepEqual(cvBytes,await readFile('C:/Users/Basit/dev/Basit-Shahab-Resume/output/pdf/Basit-Shahab-AI-Automation-Engineer-Resume.pdf'));
+  const downloadPromise=page.waitForEvent('download');
+  await page.getByRole('link',{name:'Download CV',exact:true}).click();
+  const download=await downloadPromise;
+  assert.equal(download.suggestedFilename(),'Basit-Shahab-Resume.pdf');
+  assert.deepEqual(await readFile(await download.path()),cvBytes);
+  const impactText=await page.locator('.impact-summary').innerText();
+  assert.match(impactText,/93–95%/);
+  assert.match(impactText,/Estimate from reported processing times/);
+  checks.push('actual CV download matches canonical one-page resume; estimated impact retains its basis');
   await page.getByRole('button',{name:'Business tools',exact:true}).click();
   assert.equal(await page.locator('.project:visible').count(),1);
   assert.equal(await page.getByRole('heading',{name:'Lux Gear',exact:true}).count(),1);
@@ -55,17 +70,17 @@ try {
   checks.push('project filters, exact counts and selected state');
   assert.equal(await page.getByRole('tab').count(),4);
   assert.equal(await page.getByRole('tabpanel').count(),1);
-  for(const name of ['01 Products','02 Team','03 Projects','04 Next']) {
+  for(const name of ['01 Products','02 Team','03 Projects','04 Documents']) {
     await page.getByRole('tab',{name,exact:true}).click();
     assert.equal(await page.getByRole('tab',{name,exact:true}).getAttribute('aria-selected'),'true');
     assert.equal(await page.getByRole('tabpanel').count(),1);
   }
-  assert.match(await page.getByRole('tabpanel').innerText(),/Development \/ acceptance pending/);
-  await page.getByRole('tab',{name:'04 Next'}).press('ArrowRight');
+  assert.match(await page.getByRole('tabpanel').innerText(),/Live converter · real imports checked/);
+  await page.getByRole('tab',{name:'04 Documents'}).press('ArrowRight');
   assert.equal(await page.getByRole('tab',{name:'01 Products'}).getAttribute('aria-selected'),'true');
   await page.getByRole('tab',{name:'01 Products'}).press('End');
-  assert.equal(await page.getByRole('tab',{name:'04 Next'}).getAttribute('aria-selected'),'true');
-  await page.getByRole('tab',{name:'04 Next'}).press('Home');
+  assert.equal(await page.getByRole('tab',{name:'04 Documents'}).getAttribute('aria-selected'),'true');
+  await page.getByRole('tab',{name:'04 Documents'}).press('Home');
   assert.equal(await page.getByRole('tab',{name:'01 Products'}).getAttribute('aria-selected'),'true');
   checks.push('four system modules, honest status, one visible panel and keyboard arrow/Home/End navigation');
   const summary=page.locator('.build-notes summary').first();
@@ -126,10 +141,16 @@ try {
   await page.getByRole('link',{name:'Read the system case study'}).click();
   assert.equal(new URL(page.url()).pathname,'/luxgear.html');
   assert.equal(await page.locator('h1').count(),1);
-  assert.equal(await page.locator('.case-section').count(),4);
-  assert.equal(await page.locator('.delivery-list>div').count(),4);
-  assert.match(await page.locator('.case-progress').innerText(),/not yet deployed/);
+  for(const id of ['conversion-title','product-title','team-title','enquiry-title','analysis-title','progress-title']) {
+    assert.equal(await page.locator(`#${id}`).count(),1);
+  }
+  assert.match(await page.locator('.case-progress').innerText(),/Live · real accounting imports checked/);
   assert.match(await page.locator('.case-progress').innerText(),/real locked-phone receipt is not yet verified/);
+  assert.match(await page.locator('.case-progress').innerText(),/Planned · not autonomous today/);
+  assert.match(await page.locator('.case-progress').innerText(),/DWG-to-BOQ/);
+  assert.match(await page.locator('#analysis-title').locator('..').innerText(),/3,069/);
+  assert.match(await page.locator('#analysis-title').locator('..').innerText(),/1,574/);
+  assert.doesNotMatch(await page.locator('body').innerText(),/\bAED\b|US\$|@luxgear\.ae|sk-ant-|sb_secret_/);
   assert.equal(await page.locator('meta[name="robots"]').getAttribute('content'),'noindex, nofollow');
   for(const width of [1440,768,390]) {
     await page.setViewportSize({width,height:1000});
@@ -141,7 +162,7 @@ try {
   await page.getByRole('link',{name:'Back to selected work'}).click();
   assert.equal(new URL(page.url()).hash,'#luxgear');
   await plain.goto(`${origin}/luxgear.html`);
-  assert.equal(await plain.locator('.delivery-list>div').count(),4);
+  assert.equal(await plain.locator('.delivery-list>div').count(),6);
   for(const link of await plain.locator('a[href]').all()) {
     const target=await link.getAttribute('href');
     if(target.startsWith('http')||target.startsWith('mailto:'))continue;
@@ -155,7 +176,7 @@ try {
   assert.equal(requests.some(url=>!url.startsWith(origin)),false);
   assert.deepEqual(errors,[]);
   checks.push('Lux Gear case-study navigation, live/development boundaries, local links, no-JS and responsive layouts');
-  const result={checkedOn:'2026-10-22',checks,pageErrors:errors,thirdPartyRequests:0,published:false};
+  const result={checkedOn:'2026-10-28',checks,pageErrors:errors,thirdPartyRequests:0,published:false};
   await writeFile(new URL('../qa/verification.json',import.meta.url),JSON.stringify(result,null,2));
   console.log(JSON.stringify(result));
 }catch(error){await page.screenshot({path:new URL('../qa/failure.png',import.meta.url).pathname.replace(/^\/([A-Z]:)/,'$1'),fullPage:true});throw error;}

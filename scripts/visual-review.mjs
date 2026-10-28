@@ -11,6 +11,13 @@ try {
       await page.locator(selector).scrollIntoViewIfNeeded();
       await page.screenshot({path:output(selector.slice(1))});
     }
+    await page.getByRole('tab',{name:'04 Documents',exact:true}).click();
+    await page.locator('.system-explorer').screenshot({path:output('documents')});
+    await page.goto('http://127.0.0.1:4173/luxgear.html');
+    for(const selector of ['.case-hero','[aria-labelledby="conversion-title"]','[aria-labelledby="analysis-title"]','.case-progress']) {
+      const name=selector==='.case-hero'?'case-hero':selector==='.case-progress'?'case-progress':selector.includes('conversion')?'case-conversion':'case-analysis';
+      await page.locator(selector).screenshot({path:output(name)});
+    }
     console.log(JSON.stringify({width,active:await page.evaluate(()=>document.activeElement.outerHTML.slice(0,150)),skip:await page.locator('.skip-link').evaluate(el=>({focus:el.matches(':focus'),transform:getComputedStyle(el).transform,rect:el.getBoundingClientRect().toJSON()}))}));
     await page.close();
   }

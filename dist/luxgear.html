@@ -3,40 +3,100 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Inside Basit Shahab’s Lux Gear development work: product information, technical documents, staff tasks and connected business workflows.">
+  <meta name="description" content="Basit Shahab&#8217;s Lux Gear work: document automation, Zoho imports, staff tasks, a native Android app and source-linked manufacturer enquiries.">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#111211">
-  <title>Lux Gear — System case study / Basit Shahab</title>
+  <title>Lux Gear &mdash; System case study / Basit Shahab</title>
   <link rel="icon" href="assets/monogram.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="case-page" id="top">
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header wrap"><a class="identity" href="index.html" aria-label="Basit Shahab, portfolio home"><span class="monogram" aria-hidden="true">b/s</span><span>Basit Shahab<span class="identity-role">Software & automation</span></span></a><nav aria-label="Main navigation"><a href="index.html#work">All work</a><a class="nav-contact" href="mailto:basitshahab24904@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a></nav></header>
+  <header class="site-header wrap"><a class="identity" href="index.html" aria-label="Basit Shahab, portfolio home"><span class="monogram" aria-hidden="true">b/s</span><span>Basit Shahab<span class="identity-role">Software & automation</span></span></a><nav aria-label="Main navigation"><a href="index.html#work">All work</a><a class="nav-contact" href="mailto:basitshahab24904@gmail.com">Let&#8217;s talk <span aria-hidden="true">&nearr;</span></a></nav></header>
   <main id="main">
     <section class="case-hero wrap" aria-labelledby="case-title">
-      <a class="case-back" href="index.html#luxgear">← Back to selected work</a>
+      <a class="case-back" href="index.html#luxgear">&larr; Back to selected work</a>
       <p class="eyebrow">Flagship case study / Lux Gear / UAE</p>
-      <h1 id="case-title">Lux Gear.<br><span class="serif">One connected system.</span></h1>
-      <p class="case-intro">Behind a lighting catalogue sits a much larger job: keeping product information accurate, producing technical documents and helping a small team keep work moving.</p>
-      <div class="case-facts"><div><h2>My work</h2><p>Full-stack development, workflow design, document generation and AI integration.</p></div><div><h2>Core stack</h2><p>Next.js · TypeScript · PostgreSQL<br>Supabase Auth & Storage · React Native</p></div><div><h2>Delivery</h2><p>Live web foundation, with further document and mobile work in development.</p></div></div>
-      <figure class="case-cover"><img src="assets/luxgear.webp" alt="Lux Gear’s public homepage with architectural lighting imagery and navigation to its products and catalogue." width="1440" height="1000"><figcaption>The public website. Internal staff and customer information is not shown in this case study.</figcaption></figure>
+      <h1 id="case-title">Lux Gear.<br><span class="serif">Software behind the work.</span></h1>
+      <p class="case-intro">A product catalogue grew into connected tools for document preparation, accounting imports, staff tasks and project files. My work covers the interfaces, processing rules and recovery paths that make those workflows usable.</p>
+      <div class="case-facts"><div><h2>My work</h2><p>Full-stack development, document automation, workflow design and AI integration.</p></div><div><h2>Core stack</h2><p>Next.js &middot; TypeScript &middot; Python<br>PostgreSQL / Supabase &middot; React Native</p></div><div><h2>Delivery</h2><p>Live web tools and checked accounting imports. Android APK built; further device and source checks remain.</p></div></div>
+      <figure class="case-cover"><img src="assets/luxgear.webp" alt="Lux Gear&#8217;s public lighting website with product and catalogue navigation." width="1440" height="1000"><figcaption>The public website. Internal screens, customer records and commercial prices are kept private.</figcaption></figure>
     </section>
 
-    <section class="case-section wrap" aria-labelledby="product-title"><div class="case-section-label"><p class="eyebrow">01 / Product information</p></div><div class="case-body"><h2 id="product-title">Enter it once.<br><span class="serif">Use it in the right places.</span></h2><p>A lighting product is more than a name and a photograph. Its dimensions, wattage, colour temperature, finish and protection rating need to agree wherever a customer sees them.</p><p>The CMS gives staff a structured product record. Shared templates turn that record into the public product page and technical datasheet, instead of maintaining unrelated copies by hand.</p>
-      <div class="product-flow" role="group" aria-label="One product record supplies three outputs"><div class="flow-source"><span>Staff edit</span><strong>Product record</strong><p>Specifications, options and images</p></div><span class="flow-arrow" aria-hidden="true">→</span><ul><li>Public product page</li><li>Catalogue listing</li><li>Technical datasheet / PDF</li></ul></div>
-      <p class="case-caption">Architecture diagram, not a screenshot of private company data.</p>
-      <div class="case-detail"><h3>The engineering underneath</h3><p>The preview and exported PDF share the document layout. Export handling deals with image readiness, page limits and failure recovery. Clear save and download states matter: a failed export should not make someone repeat a successful save or accidentally publish a product.</p></div>
-    </div></section>
+    <section class="case-section wrap" aria-labelledby="conversion-title">
+      <div class="case-section-label"><p class="eyebrow">01 / Document automation</p></div>
+      <div class="case-body">
+        <h2 id="conversion-title">An hour of entry.<br><span class="serif">A few minutes of review.</span></h2>
+        <p>Staff were copying quotation details into accounting import sheets. I built a PDF and Excel conversion tool with an editable worksheet preview, saved batches and downloads matching the supplied Zoho Books templates.</p>
+        <div class="impact-summary"><dl class="impact-stats" aria-label="Estimated quotation processing impact"><div><dt>Manual per quotation</dt><dd>60<span>min</span></dd></div><div><dt>Reported with tool</dt><dd>3&ndash;4<span>min</span></dd></div><div><dt>Less entry time</dt><dd>93&ndash;95%</dd></div></dl><p class="impact-note">Reported staff timings, not an independent time study. Across a 200-quotation workload, these imply 187&ndash;190 hours of capacity freed. The completed batch total and cash savings are not claimed.</p></div>
+        <div class="case-columns"><div><h3>Software reads the table first</h3><p>PDF text positions and table geometry become structured rows. Quantities, prices, discounts and VAT are checked before export. An AI reader handles supported fallbacks; unknown values stay visible for staff review.</p></div><div><h3>The preview is the output</h3><p>The worksheet preview shares its cell model with the actual Excel export. Staff can append more originals, reopen saved work and correct entries without starting again. Error references help trace failed reads and downloads.</p></div></div>
+        <p>Actual quotation and draft-invoice imports were checked in Zoho Books against their original documents. That exposed tax mapping, project naming and customer matching issues that a successful Excel download alone would not reveal.</p>
+        <p class="case-caption">The converter is live. The latest invoice export refinements remain local, and unfamiliar source layouts and customer matches still need review. Invoice time savings have not been measured.</p>
+      </div>
+    </section>
 
-    <section class="case-section wrap" aria-labelledby="team-title"><div class="case-section-label"><p class="eyebrow">02 / Team operations</p></div><div class="case-body"><h2 id="team-title">A task list that remembers<br><span class="serif">what actually happened.</span></h2><p>Staff can add their own work, receive assignments, record blockers and time, and finish tasks. Managers can set priorities and require approval on selected work. The project tracker organises separate parts of a job on a board, with the related files kept together.</p><div class="case-columns"><div><h3>History, not just the latest state</h3><p>Task versions preserve what was open or finished on a selected UAE work date. Completing something later does not rewrite yesterday. Manager deletion is soft deletion, so it does not erase the earlier record.</p></div><div><h3>One identity, enforced access</h3><p>Individual staff accounts connect the CMS and Team Hub. Permissions are checked at the server and database, not just by hiding buttons. Private project files stay behind access checks.</p></div></div><p class="case-caption">The web task foundation and preliminary project/file workspace are deployed. Notification delivery still depends on each device’s permission and subscription; end-to-end phone acceptance is a separate check.</p></div></section>
+    <section class="case-section wrap" aria-labelledby="product-title">
+      <div class="case-section-label"><p class="eyebrow">02 / Product information</p></div>
+      <div class="case-body">
+        <h2 id="product-title">One product record.<br><span class="serif">Consistent documents.</span></h2>
+        <p>A lighting product&#8217;s dimensions, wattage, colour temperature, finish and protection rating need to agree wherever they appear. Shared templates turn the staff-edited record into the public product page, catalogue and technical datasheet.</p>
+        <div class="product-flow" role="group" aria-label="One product record supplies three outputs"><div class="flow-source"><span>Staff edit</span><strong>Product record</strong><p>Specifications, options and images</p></div><span class="flow-arrow" aria-hidden="true">&rarr;</span><ul><li>Public product page</li><li>Catalogue listing</li><li>Technical datasheet / PDF</li></ul></div>
+        <p class="case-caption">Architecture diagram, not a screenshot of private company data.</p>
+        <div class="case-detail"><h3>The work after the first build</h3><p>I added manufacturer-sheet reading and picture selection, repaired custom RAL colour persistence, copied-product status, broken links and PDF save/download failures. Clear recovery states let staff retry a failed PDF without repeating a successful save or accidentally publishing a copied sheet.</p></div>
+      </div>
+    </section>
 
-    <section class="case-section wrap" aria-labelledby="judgment-title"><div class="case-section-label"><p class="eyebrow">03 / The difficult part</p></div><div class="case-body"><h2 id="judgment-title">Reading a document is not<br><span class="serif">the same as understanding the job.</span></h2><p>An Excel BOQ, a technical PDF and an approved sample can disagree. A quantity may belong to a different fitting. A standard size might replace a custom size only because someone approved that particular sample.</p><p>That changes the design of the enquiry workflow. It needs to retain the original evidence, the proposed selection and the human decision—not silently overwrite one with another.</p><div class="case-decision"><p class="eyebrow">Example of the decision, not a universal rule</p><h3>“Use the standard size”</h3><p>Was that a stock constraint, a cheaper alternative or an approved substitution? The next project may need a different answer. The workflow keeps unresolved facts visible rather than treating a previous choice as permission to repeat it.</p></div><div class="case-detail"><h3>Where AI belongs</h3><p>Help read and organise source material, retain page and image references, and suggest structured fields. Keep uncertain quantities and conflicting specifications for review. Preparation and final approval are different responsibilities; an AI suggestion does not replace either.</p></div></div></section>
+    <section class="case-section wrap" aria-labelledby="team-title">
+      <div class="case-section-label"><p class="eyebrow">03 / Team operations</p></div>
+      <div class="case-body">
+        <h2 id="team-title">Daily work.<br><span class="serif">A record that lasts.</span></h2>
+        <p>Staff can add their own tasks, receive assignments, record blockers and time, and finish work. Managers set priorities, deadlines and approval requirements. Voice notes and transcription support task descriptions without long typed entries.</p>
+        <div class="case-columns"><div><h3>History and employee reviews</h3><p>Task versions preserve what was open or finished on a selected date. Manager deletion retains earlier records. Date-based reports and PDF downloads give managers a clearer view of completed, overdue, urgent and carried-over work.</p></div><div><h3>One account across the tools</h3><p>Individual CMS accounts also open Team Hub. Server and database checks protect roles and private files. I repaired stale-browser admission and removed the numeric device cap without restoring revoked sessions.</p></div></div>
+        <div class="case-detail"><h3>A native Android client</h3><p>Built with React Native using the same accounts and task workflow. A signed APK, secure session storage, durable offline updates, reconnect sync and a Firebase notification backend are implemented. The first release still needs complete acceptance on employees&#8217; phones.</p></div>
+        <p class="case-caption">The web task workspace is deployed. Native locked-phone receipt is not yet verified. Report email was tested; recurring weekly delivery still requires activation checks.</p>
+      </div>
+    </section>
 
-    <section class="case-section case-progress wrap" aria-labelledby="progress-title"><div class="case-section-label"><p class="eyebrow">04 / Beyond the live foundation</p></div><div class="case-body"><h2 id="progress-title">Connected workflows.<br><span class="serif">Honest delivery boundaries.</span></h2><p>These are further engineering work within the same system, not additional completed client projects. Status below reflects the 22 October 2026 development checkpoint.</p><dl class="delivery-list"><div><dt>Enquiry Builder improvements <span>Built locally · acceptance pending</span></dt><dd>PDF fitting schedules, source-picture placement, editable Excel descriptions and explicit missing/conflicting facts. Unfamiliar layouts still need review; the newer parser is not yet deployed.</dd></div><div><dt>Quotation & invoice conversion <span>Built locally · not released</span></dt><dd>Append documents to saved batches, check duplicates and failed files, then export against supplied Zoho column templates. A real accounting import and the paid reader remain separate acceptance gates.</dd></div><div><dt>Native Android Team Hub <span>APK built · phone acceptance pending</span></dt><dd>A React Native interface—not a website container—with shared accounts, an offline outbox and reconnect sync. The native notification backend is activated; real locked-phone receipt is not yet verified.</dd></div><div><dt>Project-aware automation <span>Further work · not autonomous today</span></dt><dd>Linked email, suggested assignments and follow-ups are the longer-term direction. Automatic mailbox reading, sending and independent business decisions are not presented as working features.</dd></div></dl></div></section>
+    <section class="case-section wrap" aria-labelledby="enquiry-title">
+      <div class="case-section-label"><p class="eyebrow">04 / Manufacturer enquiries</p></div>
+      <div class="case-body">
+        <h2 id="enquiry-title">Prepare from sources.<br><span class="serif">Keep decisions visible.</span></h2>
+        <p>A BOQ, technical PDF and approved sample can disagree. I built a source-linked enquiry workspace that keeps printed specifications, quantities, proposed alternatives and staff decisions separate.</p>
+        <p>Staff work in an editable supplier-sheet layout with original product pictures, picture cropping, saved notes and Excel/PDF exports. Preparation and final approval have separate permissions. An actual staff-account flow was checked through saving, review, export and reopening.</p>
+        <div class="case-decision"><p class="eyebrow">A decision needs context</p><h3>&ldquo;Use the standard size&rdquo;</h3><p>That could mean an approved sample or an alternative proposed because of stock or cost. The software retains the source and the decision, so the next project does not silently inherit the same substitution.</p></div>
+        <div class="case-detail"><h3>AI assists with reading</h3><p>Anthropic Haiku helps extract and organise source details. Structured-output checks, page and picture references, retained readings and human approval contain the uncertainty. Unread evidence and unresolved quantity mappings remain questions, not invented facts.</p></div>
+        <p class="case-caption">The first enquiry category is live. A ten-line real-source output was checked, but complete independent equivalence to the staff-prepared reference remains unverified. DWG-to-BOQ is planned, not a delivered feature.</p>
+      </div>
+    </section>
 
-    <section class="case-closing wrap"><p class="eyebrow">The work behind the screens</p><h2>Product data. Documents.<br>People. <span class="serif">One connected system.</span></h2><p>This is the part of software development I enjoy: finding where information gets lost, making the rules explicit, and building around how people actually work.</p><div class="case-links"><a class="primary-button" href="index.html#work">Explore the other projects <span aria-hidden="true">←</span></a><a class="text-link" href="https://www.luxgear.ae" target="_blank" rel="noopener noreferrer">Visit Lux Gear <span aria-hidden="true">↗</span></a></div></section>
+    <section class="case-section wrap" aria-labelledby="analysis-title">
+      <div class="case-section-label"><p class="eyebrow">05 / Quotation analysis</p></div>
+      <div class="case-body">
+        <h2 id="analysis-title">Historical quotes.<br><span class="serif">Traceable analysis.</span></h2>
+        <p>I processed 225 supplied quotation PDFs, checked duplicates and revisions, and delivered an editable workbook containing 3,069 extracted item rows and 1,574 pictures linked to their source items.</p>
+        <div class="case-columns"><div><h3>Compare like with like</h3><p>Lighting families, mounting styles and technical specifications are grouped for review. Price comparisons respect dates, units and revisions; metres, pieces, accessories and packages stay distinct.</p></div><div><h3>Keep the original within reach</h3><p>Source references and financial checks make the output auditable. Unresolved documents stay visible, and quoted quantities are not presented as actual orders, sales or inventory demand.</p></div></div>
+        <p>Alongside development and analysis, I supported lighting supplier comparisons and prepared an editable company profile. Commercial terms and original business documents remain private.</p>
+      </div>
+    </section>
+
+    <section class="case-section case-progress wrap" aria-labelledby="progress-title">
+      <div class="case-section-label"><p class="eyebrow">06 / Current delivery</p></div>
+      <div class="case-body">
+        <h2 id="progress-title">What runs now.<br><span class="serif">What comes next.</span></h2>
+        <p>Status reflects the 28 October 2026 work record. These are parts of one system, rather than additional completed client projects.</p>
+        <dl class="delivery-list">
+          <div><dt>Product CMS and Team Hub <span>Deployed web tools</span></dt><dd>Shared product/PDF templates, staff tasks, individual accounts, saved history and review tools. Device permissions and actual notification receipt require separate checks.</dd></div>
+          <div><dt>Zoho quotation and invoice converter <span>Live &middot; real accounting imports checked</span></dt><dd>PDF/Excel input, saved batches, editable previews and template-matched exports. Latest invoice refinements await release; new layouts and customer matches need review.</dd></div>
+          <div><dt>Manufacturer Enquiry Builder <span>First category live &middot; source completion pending</span></dt><dd>Original evidence, editable picture-based worksheet and human approval. Full reference equivalence and the remaining enquiry categories are not claimed complete.</dd></div>
+          <div><dt>Native Android Team Hub <span>APK built &middot; phone acceptance pending</span></dt><dd>Native task interface, shared accounts, offline outbox and automatic sync. Native notification backend activated; real locked-phone receipt is not yet verified.</dd></div>
+          <div><dt>Project and document tracker <span>Initial workspace deployed &middot; further connections in development</span></dt><dd>A board for separate parts of each job, organised originals and controlled access. Task links and email filing are being developed around that structure.</dd></div>
+          <div><dt>Further automation <span>Planned &middot; not autonomous today</span></dt><dd>DWG-to-BOQ, automatic mailbox reading, AI-suggested assignments and approved follow-ups are future work. No unattended sending or independent commercial decisions are presented as live features.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="case-closing wrap"><p class="eyebrow">The work behind the screens</p><h2>Software that fits<br><span class="serif">the work people do.</span></h2><p>The immediate result is less repeated data entry. The continuing value comes from reusable workflows, clearer records and tools that can grow as the team&#8217;s work changes.</p><div class="case-links"><a class="primary-button" href="assets/Basit-Shahab-Resume.pdf" download>Download my CV <span aria-hidden="true">&darr;</span></a><a class="text-link" href="index.html#work">Explore the other projects <span aria-hidden="true">&larr;</span></a><a class="text-link" href="https://www.luxgear.ae" target="_blank" rel="noopener noreferrer">Visit Lux Gear <span aria-hidden="true">&nearr;</span></a></div></section>
   </main>
-  <footer class="site-footer wrap"><p>Basit Shahab / Software development</p><p>Lux Gear case study · October 2026</p><a href="#top">Back to top ↑</a></footer>
+  <footer class="site-footer wrap"><p>Basit Shahab / Software & automation</p><p>Lux Gear case study &middot; Updated 28 October 2026</p><a href="#top">Back to top &uarr;</a></footer>
 </body>
 </html>

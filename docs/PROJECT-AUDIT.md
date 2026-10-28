@@ -1,5 +1,26 @@
 # Project selection evidence
 
+## 28 October Lux Gear update
+
+The 22 October public-site checks below remain historical. New Lux Gear content
+uses the current canonical work report, ROADMAP and acceptance checkpoints.
+The converter is now live and actual quotation/draft-invoice imports were checked.
+The first source-linked enquiry category is live, with source-completion limits.
+The Android client is a built alpha, not a verified native phone rollout.
+DWG-to-BOQ and autonomous project email remain planned. The case study now also
+covers the delivered quotation-analysis workbook and general supplier/document
+work without exposing private records, prices or company incidents.
+
+Reported 60 versus 3–4 minutes per quotation yields a labelled estimate of
+93–95% less entry time and 187–190 hours for a 200-quotation workload. No completed
+batch time study, realised payroll savings, avoided loss or annual volume is claimed.
+Basit directly confirms the CV's August 2026 Lux Gear start date. Both current
+CV variants retain Neo Praxis experience and independent/freelance work. AAPL
+remains educational, not an investment-performance claim.
+
+The last user-supplied portfolio URL was read-only checked on 28 October and
+still returned 404. Local work and passing QA do not establish public deployment.
+
 Reviewed22 October2026. User requests completed and deployed work only. Scope is
 the `C:/Users/Basit/dev` inventory, not a claim every dependency or every business
 workflow in every folder has been audited. No source repo was changed by review.

@@ -1,7 +1,45 @@
 # Basit Shahab portfolio
 
+## Current update 28 October 2026
+
+Updated locally with the Lux Gear document converter, source-linked enquiries,
+staff task/voice/history tools, Android alpha, initial project boards and
+quotation analysis. The existing five project cards and graphite/orange design
+are preserved. The deeper case study separates live web tools, checked accounting
+imports, native alpha and planned DWG/email automation. Reported quotation-entry
+timings are labelled estimates, with their basis displayed beside the figures.
+No supplier prices, payroll, internal loss incident or private records appear.
+
+The homepage and case study now download the actual current one-page AI
+Automation Engineer CV at `dist/assets/Basit-Shahab-Resume.pdf`. Its byte identity
+with the canonical Resume output and the actual browser download are checked.
+Basit confirms Lux Gear start date August 2026. An updated Software Developer
+variant is also built in the personal Resume folder. Both PDFs have selectable
+text and three contact links; original versions are retained there in private tmp.
+
+The browser verification passes project filters, four keyboard-operated module
+tabs, no-JS fallback, clipboard denial, local links/assets and the exact CV
+download. There is no overflow at 320/360/390/768/1440/1920 and no page errors or
+third-party runtime requests. Final 390/768/1440 screenshots and both CV pages
+are reviewed before handoff; see `qa/verification.json` and the dated update plan.
+
+The existing public URL still returned 404 on the 28 October read-only check.
+The already-local `vercel.json` fixes static output configuration but has not
+been published. No new project, push, deployment, account or domain change was
+performed. Current publication approval is still required by `AGENTS.md`.
+
 Personal portfolio. GitHub source push authorised22October2026 to
 `https://github.com/Prawncookie/portfolio`. No hosting deployment requested.
+
+## Vercel configuration
+
+`vercel.json` sets Other/static, skips install/build and serves only `dist`.
+Keep the Vercel Root Directory at the repository root (default), not `dist`.
+No environment variables are needed. A changed output setting/configuration
+requires a new deployment; refreshing an older deployment does not change it.
+The22October configuration repair is local until separately pushed. GitHub's
+initial deployment check reports success, but the actual public404 URL has
+not yet been supplied, so a live resolution is not claimed.
 
 ## Current design: graphite / orange
 
